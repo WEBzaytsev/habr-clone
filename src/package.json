@@ -6,11 +6,18 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@vue/eslint-config-prettier": "^8.0.0",
         "axios": "^1.6.1",
+        "eslint": "^8.55.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.0.1",
+        "eslint-plugin-vue": "^9.19.2",
         "laravel-vite-plugin": "^0.8.0",
+        "prettier": "^3.1.1",
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@rushstack/eslint-patch": "^1.6.1",
         "@vitejs/plugin-vue": "^4.5.2",
         "vue": "^3.2.36",
         "vue-router": "^4.2.5",
