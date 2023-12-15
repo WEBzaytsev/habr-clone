@@ -1,0 +1,2 @@
+It's a helper file for sync postgresql folder in git.
+Don't remove it!
