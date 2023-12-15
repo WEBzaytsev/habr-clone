@@ -1,7 +1,10 @@
 <script setup></script>
 
 <template>
-    <div class="">Home</div>
+    <div class="">
+        <RouterLink to="/login">Login</RouterLink>
+        <RouterLink to="/register">Register</RouterLink>
+    </div>
 </template>
 
 <style scoped></style>
