@@ -1,6 +1,7 @@
 import LoginView from '@/views/auth/LoginView.vue';
 import RegisterView from '@/views/auth/RigisterView.vue';
 import MainListView from '@/views/MainListView.vue';
+import MyTrucks from '@/views/account/MyTrucks.vue';
 import MyCargos from '@/views/account/MyCargos.vue';
 
 const routes = [
