@@ -264,7 +264,7 @@ const filters = ref({
 
 <template>
     <div class="">
-        <div class="mb-5 grid grid-cols-[180px_180px_100px] gap-4">
+        <div class="mb-5 grid grid-cols-[180px_180px_120px_100px] gap-4">
             <AppInput
                 name="fromCity"
                 :model-value="filters.fromCity"
@@ -280,8 +280,12 @@ const filters = ref({
                 type="text"
             />
             <button
-                v-text="'Сбросить'"
+                v-text="'Применить'"
                 class="text-center text-14 block w-full rounded-md bg-emerald-300 mx-auto cursor-pointer select-none px-5 py-2 transition-all duration-300 hover:bg-emerald-400 active:bg-emerald-500 focus:bg-emerald-500 disabled:bg-zinc-400 disabled:cursor-not-allowed"
+            />
+            <button
+                v-text="'Сбросить'"
+                class="text-center text-14 block w-full rounded-md bg-white border border-emerald-300 mx-auto cursor-pointer select-none px-5 py-2 transition-all duration-300 hover:bg-emerald-100 active:bg-emerald-200 focus:bg-emerald-200 disabled:bg-zinc-400 disabled:cursor-not-allowed"
             />
         </div>
         <div
