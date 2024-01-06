@@ -38,6 +38,6 @@ RUN composer global require "laravel/installer"
 
 
 
-EXPOSE 5173
+EXPOSE 9000
 WORKDIR /var/www
 CMD ["php-fpm", "composer install", "npm install" , "npm run build"]
