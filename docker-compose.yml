@@ -39,7 +39,7 @@ services:
     container_name: postgres
     restart: unless-stopped
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./docker/db:/var/lib/postgresql/data
     ports:
       - ${PG_PORT:-5433}:5433
     environment:
