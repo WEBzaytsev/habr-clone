@@ -27,8 +27,8 @@ services:
       - ${NG_PORT:-8080}:80
     volumes:
       - ./src/public:/var/www/public
-      - ./.docker/nginx/conf.d/:/etc/nginx/conf.d/
-      - ./.docker/nginx/logs/:/var/log/nginx/
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker/nginx/logs/:/var/log/nginx/
     depends_on:
       - cargo
       - db
