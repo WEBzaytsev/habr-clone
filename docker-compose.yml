@@ -17,6 +17,7 @@ services:
       - ${APP_PORT:-9000}:9000
     env_file:
       - .env
+
   # Web Server Service
   nginx:
     image: nginx:alpine
@@ -45,14 +46,16 @@ services:
       POSTGRES_DB: ${DB_DATABASE}
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
+
   # Redis Cache Service
   redis:
     image: redis:alpine
     container_name: redis
     restart: unless-stopped
     ports:
-      - 6380:6379
+      - ${REDIS:-6379}:6379
 
+  # Pgadmin Cache Service
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgAdmin
