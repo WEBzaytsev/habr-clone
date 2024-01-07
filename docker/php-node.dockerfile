@@ -1,5 +1,5 @@
-FROM php:8.2-fpm
-
+FROM php:8.2-fpm AS build_php
+WORKDIR /var/www
 
 
 RUN apt-get update \
@@ -18,10 +18,7 @@ RUN pecl install pcov && docker-php-ext-enable pcov
 # && docker-php-ext-enable xdebug \
 # && echo ";zend_extension=xdebug" > /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-# Node.js, NPM, Yarn
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
-RUN apt-get install -y nodejs
-RUN npm install npm@latest -g
+
 
 # Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -35,9 +32,11 @@ ENV PATH $PATH:/composer/vendor/bin
 RUN composer config --global process-timeout 3600
 RUN composer global require "laravel/installer"
 
-
+COPY . .
+RUN compose install
 
 EXPOSE 9000
-WORKDIR /var/www
-RUN composer install
-RUN npm install
+# Node.js, NPM, Yarn
+# RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+# RUN apt-get install -y nodejs
+# RUN npm install npm@latest -g
