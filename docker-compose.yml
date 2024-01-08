@@ -11,6 +11,7 @@ services:
       dockerfile: ./docker/php-node.dockerfile
     volumes:
       - ./:/var/www
+    command: composer install && npm install && npm run build
     ports:
       - ${APP_PORT:-9005}:9000
     env_file:
