@@ -9,9 +9,10 @@ services:
     build:
       context: ./
       dockerfile: ./docker/php-node.dockerfile
+    user: 1001:1001    # added
     volumes:
       - ./:/var/www
-    command: composer install && npm install && npm run build
+    command: sh -c "composer install --ignore-platform-reqs && npm install && npm run build"
     ports:
       - ${APP_PORT:-9005}:9000
     env_file:

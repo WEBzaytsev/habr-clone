@@ -26,8 +26,5 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install npm@latest -g
 
-RUN composer install
-RUN npm install
-RUN npm run build
 EXPOSE 9000
-# Node.js, NPM, Yarn
+# Node.js, NPM, Yarn  
